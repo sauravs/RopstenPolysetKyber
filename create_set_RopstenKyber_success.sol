@@ -20,16 +20,16 @@ interface ICreateSet {
 
 contract CREATESET {
     
-    address public SetTokenCreatorRopstenAddress = 0x720ddAa73C16B12b5AB6362BacCB504cFd907121;
-    address public ControllerRopstenAddress = 0x0f471ab1210e2f1704D82E48f9D442A874486749 ;
-    address public IntegrationRegistryRopstenAddress = 0x8cA2366e388DDe7E3910956B84DD3De4D5277616 ;
+    address public SetTokenCreatorRopstenAddress = 0x0BE45e0c58A1202e0d26458DbA0711329F758bd2;
+    address public ControllerRopstenAddress = 0xbd69a021a74e942505FE0C908DeDFee102BF78BE ;
+    address public IntegrationRegistryRopstenAddress = 0x83E6Db0A619e8BF4A8e370E456a50A7ae01Bdf75 ;
 
-    address public SetValuerRopstenAddress = 0x425783dE6E1C57903eD5eb457208eCB9D224965C ;
+    address public SetValuerRopstenAddress = 0x84de8EBB3f43B38E875a651104d2F70Fc9DCBBE5 ;
     
     
-    address public BasicIssuanceModuleRopstenAddress = 0x3407055c354fFc5f9943Fafab128a10e9b7bF1Fe ;
-    address public NavIssuanceModuleRopstenAddress = 0x670Dc454CeEBE576bE85370bdd5351Db3389b4ca ;
-    address public StreamingFeeModuleRopstenAddress = 0xF64C661F03ac1a0f322780101fF47E83cBD522d9 ;
+    address public BasicIssuanceModuleRopstenAddress = 0xE0E22d8bdC10F69982BdBD84327f3602a163A18E ;
+    address public NavIssuanceModuleRopstenAddress = 0x41076F5b0582B07C741af90019B02DC7ED00A87b ;
+    address public StreamingFeeModuleRopstenAddress = 0x8811e751C566152eA829cF173DdDe25916F487D7 ;
     
     
  
@@ -55,36 +55,102 @@ contract CREATESET {
     
      /*
      
+    	
+ address: 
+
+   1) Controller.sol : 0xbd69a021a74e942505FE0C908DeDFee102BF78BE
+      Fee Receipent Address : 0x3793f758a36c04B51a520a59520e4d845f94F9F2
+      https://ropsten.etherscan.io/address/0xbd69a021a74e942505FE0C908DeDFee102BF78BE
+
+
+   2) SetTokenCreator.sol :  0x0BE45e0c58A1202e0d26458DbA0711329F758bd2
+      https://ropsten.etherscan.io/address/0x0BE45e0c58A1202e0d26458DbA0711329F758bd2
+   
+	
+   3) SetValuer.sol : 0x84de8EBB3f43B38E875a651104d2F70Fc9DCBBE5
+      https://ropsten.etherscan.io/address/0x84de8EBB3f43B38E875a651104d2F70Fc9DCBBE5
+
+   4) IntegrationRegistry.sol : 0x83E6Db0A619e8BF4A8e370E456a50A7ae01Bdf75
+      https://ropsten.etherscan.io/address/0x83E6Db0A619e8BF4A8e370E456a50A7ae01Bdf75
+ 
+	
+   5) BasicIssuanceModule.sol : 0xE0E22d8bdC10F69982BdBD84327f3602a163A18E
+	  https://ropsten.etherscan.io/address/0xE0E22d8bdC10F69982BdBD84327f3602a163A18E
+	
+	
+   6) StreamingFeeModule.sol : 0x8811e751C566152eA829cF173DdDe25916F487D7
+	   https://ropsten.etherscan.io/address/0x8811e751C566152eA829cF173DdDe25916F487D7
+	
+   7)  NAVIssuanceModule.sol : 0x41076F5b0582B07C741af90019B02DC7ED00A87b
+	   https://ropsten.etherscan.io/address/0x41076F5b0582B07C741af90019B02DC7ED00A87b
+	 
+
+   8)  PriceOracle.sol
+        https://ropsten.etherscan.io/address/
+	
+
+
+
+
+	SET Token : RBATLINK Set: 0xb845572ED6225898Fa8c695bE0e7B363bbCdC0fC
+      https://ropsten.etherscan.io/token/0xb845572ed6225898fa8c695be0e7b363bbcdc0fc
+	
+	
+	 Token Addresses:
+
+     1) Mock_WETH : 0xc778417e063141139fce010982780140aa0cd5ab
+	 2) Mock_USDC : 0x068b43f7f2f2c6a662c36e201144ae45f7a1c040
+
+     3) Mock_Bat : 0xdb0040451f373949a4be60dcd7b6b8d6e42658b6
+     4) Mock_LINK : 0xb4f7332ed719eb4839f091eddb2a3ba309739521
+
+
+
+       // To put in comment of SetTokenCreator File
+
+  To Put In Comment
+	
      Create SET with following underlying Component:
      
      
-     Underlying Component 1 : MockBAT = 0x482dC9bB08111CB875109B075A40881E48aE02Cd  ,  Allocation % = 30%
-     Underlying Component 2 : MockZRX = 0x162c44e53097e7B5aaE939b297ffFD6Bf90D1EE3  ,  Allocation % = 70%
+     Underlying Component 1 : Mock_Bat = 0xdb0040451f373949a4be60dcd7b6b8d6e42658b6  ,  Allocation % = 50%
+     Underlying Component 2 : Mock_LINK = 0xb4f7332ed719eb4839f091eddb2a3ba309739521  ,  Allocation % = 50%
      
-     ["0x482dC9bB08111CB875109B075A40881E48aE02Cd" , "0x162c44e53097e7B5aaE939b297ffFD6Bf90D1EE3"]    [MockBAT,MockZRX]
-     ["20000000000000000000" ,"30000000000000000000"]    [20 MockBAT , 30 MockZRX]
-    ["0x8a070235a4B9b477655Bf4Eb65a1dB81051B3cC1" , "0x5dB52450a8C0eb5e0B777D4e08d7A93dA5a9c848" , "0xE038E59DEEC8657d105B6a3Fb5040b3a6189Dd51" ]    [Modules To Be Added]
-                [BasicIssuanceModuleKovanAddress ,0x5dB52450a8C0eb5e0B777D4e08d7A93dA5a9c848 , StreamingFeeModuleKovanAddress]
-    0x3793f758a36c04B51a520a59520e4d845f94F9F2   [Manager Address]
-    KOVAN-BAT-ZRX       [Name]
+     ["0xdb0040451f373949a4be60dcd7b6b8d6e42658b6" , "0xb4f7332ed719eb4839f091eddb2a3ba309739521"]    [Mock_Bat,Mock_LINK]
+     
+	 ["2000000000000000000" ,"500000000000000000"]    [ 2 Mock_Bat , 0.5 Mock_LINK]
     
-    KBATZRX           [Symbol]
-     
-     
-     SET CREATED  
-     
-     https://kovan.etherscan.io/token/0x1b21742a271ee85f837d208c5e9b99be6cdea6ce#readContract
-     
-     SET KOVAN-BAT-ZRX Address  = 0x1b21742a271ee85f837d208c5e9b99be6cdea6ce;
-     
-     
+	 ["0xE0E22d8bdC10F69982BdBD84327f3602a163A18E" , "0x41076F5b0582B07C741af90019B02DC7ED00A87b" , "0x8811e751C566152eA829cF173DdDe25916F487D7" ]    [Modules To Be Added]
+                [BasicIssuanceModuleRopstenAddress ,NAVIssuanceRopstenAddress , StreamingFeeModuleRopstenAddress]
+   
+ 0x3793f758a36c04B51a520a59520e4d845f94F9F2   [Manager Address]
+  
+  Symbol : RBATLINK
+  Ropsten-BAT-LINK       [Name]
+    
+     -------------------------------------------------------------
+
+	  
+	controller init
+	//factory
+	["0x0BE45e0c58A1202e0d26458DbA0711329F758bd2"]
+	//modules
+	["0xE0E22d8bdC10F69982BdBD84327f3602a163A18E" , "0x41076F5b0582B07C741af90019B02DC7ED00A87b" , "0x8811e751C566152eA829cF173DdDe25916F487D7" ]
+	//resource - integration registry
+	["0x83E6Db0A619e8BF4A8e370E456a50A7ae01Bdf75"]
+	// resourceID
+	["0"]
+	
+
+
+    ------------------------------------------------------------------ 
      Data provided to Intialize NAVIssuance:
      
-     ["0x0000000000000000000000000000000000000000", "0x0000000000000000000000000000000000000000", ["0xb7a4F3E9097C08dA09517b5aB877F7a917224ede"], "0x3793f758a36c04B51a520a59520e4d845f94F9F2", ["100000000000000" , "10000000000000000"], "800000000000000000" , "10000000000000000" , "100000000000000000" , "1000000000000000000"]
+     ["0x0000000000000000000000000000000000000000", "0x0000000000000000000000000000000000000000", ["0x068b43f7f2f2c6a662c36e201144ae45f7a1c040"], "0x3793f758a36c04B51a520a59520e4d845f94F9F2", ["100000000000000" , "10000000000000000"], "800000000000000000" , "10000000000000000" , "100000000000000000" , "1000000000000000000"]
 managerIssuanceHook = '0x0000000000000000000000000000000000000000',
 managerRedemptionHook = '0x0000000000000000000000000000000000000000',
 	
-address[] reserveAssets = ['0xb7a4F3E9097C08dA09517b5aB877F7a917224ede']  // USDC  On Kovan
+address[] reserveAssets = ['0x068b43f7f2f2c6a662c36e201144ae45f7a1c040']  // USDC  On Ropsten
 address feeRecipient = '0x3793f758a36c04B51a520a59520e4d845f94F9F2'
 uint256[2] managerFees = [100000000000000 , 10000000000000000]   // [0.01% , 1%]  //        0.01% -> 100000000000000(10^14)      1% -> 10000000000000000 (10^16)
 uint maxManagerFee = 800000000000000000                // 80%  ->  800000000000000000
@@ -95,7 +161,9 @@ uint maxPremiumPercentage = 100000000000000000	               // 10% -> 10000000
 uint minSetTokenSupply     = 	1000000000000000000	            // 1 Token   ->   1000000000000000000
 Reserve USDC Asset Quanity to supply  Set: 100 USDC    100000000000000000000
 		
-     
+
+
+
      
      */
 
@@ -134,6 +202,8 @@ Reserve USDC Asset Quanity to supply  Set: 100 USDC    100000000000000000000
         
         
         }
+        
+        
         
         
         
