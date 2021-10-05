@@ -1,5 +1,62 @@
+// SPDX-License-Identifier: MIT
 
-          Test Indirect Issuance On Ropsten (Kyber)
+pragma solidity 0.6.10;
+
+interface ICreateSet {
+    function create(
+        address[] memory _components,
+        int256[] memory _units,
+        address[] memory _modules,
+        address _manager,
+        string memory _name,
+        string memory _symbol
+      
+    )
+        external
+        returns (address);
+}
+
+
+
+contract CREATESET {
+    
+    address public SetTokenCreatorRopstenAddress = 0x0BE45e0c58A1202e0d26458DbA0711329F758bd2;
+    address public ControllerRopstenAddress = 0xbd69a021a74e942505FE0C908DeDFee102BF78BE ;
+    address public IntegrationRegistryRopstenAddress = 0x83E6Db0A619e8BF4A8e370E456a50A7ae01Bdf75 ;
+
+    address public SetValuerRopstenAddress = 0x84de8EBB3f43B38E875a651104d2F70Fc9DCBBE5 ;
+    
+    
+    address public BasicIssuanceModuleRopstenAddress = 0xE0E22d8bdC10F69982BdBD84327f3602a163A18E ;
+    address public NavIssuanceModuleRopstenAddress = 0x41076F5b0582B07C741af90019B02DC7ED00A87b ;
+    address public StreamingFeeModuleRopstenAddress = 0x8811e751C566152eA829cF173DdDe25916F487D7 ;
+    
+    
+ 
+    address public MockUSDC = 0x068B43f7F2f2c6a662C36E201144aE45f7a1C040 ;
+    address public Mock_LINK =  0xb4f7332ed719Eb4839f091EDDB2A3bA309739521 ;
+    address public MockWETH =  0xc778417E063141139Fce010982780140Aa0cD5Ab ;
+    address public MockBat =  0xDb0040451F373949A4Be60dcd7b6B8D6E42658B6 ;
+
+    
+    //address public sushiSWAPExchangeAdapterKovan = 0xbFAD1987608a38bfA0FE4c5510c1aF834aE21379 ;
+    
+ 
+
+    
+        
+    modifier onlyManager {
+        require (msg.sender == 0x3793f758a36c04B51a520a59520e4d845f94F9F2 , 'Only Manager has right to execute this function');
+        _;
+        
+    }
+    
+
+    
+     /*
+     
+    	
+    Test Indirect Issuance On Ropsten (Kyber)
 	
 	
 	
@@ -155,5 +212,48 @@ Reserve USDC Asset Quanity to supply  Set: 100 USDC    100000000000000000000
     maxStreamingFeePercentage  = 800000000000000000      80%
 	streamingFeePercentage  = 200000000000000000       20%
 		
-	lastStreamingFeeTimestamp =  1633414127 
+	lastStreamingFeeTimestamp =  1633414127
+
+
+
+     
+     */
+
+
+
+
+
+
+    function createMySet(
+        address[] memory _components,
+        int256[] memory _units,
+        address[] memory _modules,
+        address _manager,
+        string memory _name,
+        string memory _symbol 
+         ) external returns (address) {
+        
+          ICreateSet createSet = ICreateSet(SetTokenCreatorRopstenAddress) ;
+          address[] memory components = _components;
+          int256[] memory uints = _units;
+          address[] memory modules = _modules;
+          address manager = _manager;
+          string memory name = _name;
+          string memory symbol = _symbol;
+      
+         
+        return createSet.create(components, uints ,modules ,manager , name , symbol  );
+        
+        
+
+        }
+        
+        
+      
+        
+        
+        
+        }
+        
+        
         
