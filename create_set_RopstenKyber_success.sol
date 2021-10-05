@@ -234,7 +234,22 @@ Reserve USDC Asset Quanity to supply  Set: 100 USDC    100000000000000000000
     Current LINK Price : $27.12
 
 
+    ------------------------------------------------------
+
+NAV Issuance Issue :
+
+  _setToken : 0xb845572ED6225898Fa8c695bE0e7B363bbCdC0fC
+
+  _reserveAsset : 0x068b43f7f2f2c6a662c36e201144ae45f7a1c040   (Mock_USDC)
+  
+  _reserveAssetQuantity : 10000000000000000000          (10 USDC)
+
+  _minSetTokenReceiveQuantity : 1000000000000000000    (1 Set)
+
+  _to : 0x3793f758a36c04B51a520a59520e4d845f94F9F2
+
     
+----------------------------------------------------------
 ----------------------------------------------------------
 
 
