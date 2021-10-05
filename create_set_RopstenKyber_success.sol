@@ -55,8 +55,7 @@ contract CREATESET {
     
      /*
      
-    	
-    Test Indirect Issuance On Ropsten (Kyber)
+  Test Indirect Issuance On Ropsten (Kyber)
 	
 	
 	
@@ -215,6 +214,65 @@ Reserve USDC Asset Quanity to supply  Set: 100 USDC    100000000000000000000
 	lastStreamingFeeTimestamp =  1633414127
 
 
+
+
+
+
+
+   To issue 1 RBATLINK Set : 
+
+   Bat = 50%
+   LINK = 50%
+	   
+	   Set Strating Price of SET = 10$
+	   
+	    So, req BAT  = (50% * 10)/0.72 = 7 BAT  =  7* 10^18 = 7000000000000000000  BAT
+			req LINK = (50% * 10)/27.12 = 0.184 LINK  =  0.184 * 10^18 =  184000000000000000 LINK
+
+    Current BAT Price : $ 0.72
+
+    Current LINK Price : $27.12
+
+
+    
+----------------------------------------------------------
+
+
+  EXAMPLE AND FORMULA TO CALCULATE BASELINE QTY OF UNTERLYING COMPONENTS OF A GIVEN SET 
+
+ 1) Suppose you want to create SET Token name (DAI - BAT) SET. 
+
+ 2) DAI current market price = $1 (assume) ----> fetch rom 1 inch API 
+
+ 3) BAT current market price = $2 (assume) ----> fetch rom 1 inch API 
+
+ 4) Suppose your input% allocation for : 
+
+                                 DAI = 60%  (input)  BAT = 40% (input) 
+
+ 5) Suppose your starting price(face value) of your (DAI-BAT) set (which you will set in metadata) = $200 (Input) 
+
+ 6)Then,BASELINEAQTY of DAI Token REQ to ISSUE 1 (DAI-BAT) SET 
+
+                              =  (Allocation% of DAI * STARTING PRICE OF (DAI-BAT) SET TOKEN)/ price of DAI token 
+
+                       = ( 60% *200)/1$ = 120 QTY OF DAI TOKEN 
+
+ 
+
+7)Then, BASELINEAQTY of BAT Token REQ to ISSUE 1 (DAI-BAT) SET  
+
+                                 =(Allocation% of BAT * STARTING PRICE OF (DAI-BAT) SET TOKEN)/ price of BAT token 
+
+                         =  ( 40% *200)/2$ = 40 QTY OF BAT TOKEN 
+
+ 
+
+       ( 120(DAI) * 1$) + (40(BAT) * 2$) = 200$ (100% colltarized) 
+
+  
+
+This point 6 and 7 will go into QTY parameter while creating the set. 
 
      
      */
