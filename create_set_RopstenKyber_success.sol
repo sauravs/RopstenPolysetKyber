@@ -55,7 +55,8 @@ contract CREATESET {
     
      /*
      
-  Test Indirect Issuance On Ropsten (Kyber)
+ 
+	                                                           Test Indirect Issuance On Ropsten (Kyber)
 	
 	
 	
@@ -92,7 +93,12 @@ contract CREATESET {
    
        KyberExchangeAdapter.sol  :  0xa385c3Cfd44C1E4b77a6c9e4DE8DAC9345E43ff3      KyberNetworkProxy :      0xd719c34261e099Fdb33030ac8909d5788D3039C4
    
-   
+                              
+                                                   
+                                      Price Oracle : Method 1
+
+
+
         PriceOracle.sol  : 0x9d642b9537Ac201f35A066fE4830Bc835a4e3115
         https://ropsten.etherscan.io/address/0x9d642b9537Ac201f35A066fE4830Bc835a4e3115
 	
@@ -113,11 +119,33 @@ contract CREATESET {
    _oracles : ["0x0000000000000000000000000000000000000000" , "0x0000000000000000000000000000000000000000"]
 
 
- 
-   0x9d642b9537Ac201f35A066fE4830Bc835a4e3115
+                                                        
+                                                   Price Oracle : Method 2
+
+
+
+        PriceOracle.sol  : 0x906e9d0559C431Fbf2361ea79244d359fdfe1a44
+        https://ropsten.etherscan.io/address/0x906e9d0559C431Fbf2361ea79244d359fdfe1a44
+	
+
+   Price Orcale Deploy Parameter:
+
+
+  _controller :  0xbd69a021a74e942505FE0C908DeDFee102BF78BE
+  
+  _masterQuoteAsset : 0x068b43f7f2f2c6a662c36e201144ae45f7a1c040
+  
+   _adapters : ["0xa385c3Cfd44C1E4b77a6c9e4DE8DAC9345E43ff3"]
+  
+   _assetOnes :  ["0xdb0040451f373949a4be60dcd7b6b8d6e42658b6"]       [Mock_Bat]
+
+   _assetTwos :  ["0x068b43f7f2f2c6a662c36e201144ae45f7a1c040"]       [Mock_USDC]
+
+   _oracles : ["0x0000000000000000000000000000000000000000"]
 
 
  
+  
 
 
 
@@ -234,7 +262,7 @@ Reserve USDC Asset Quanity to supply  Set: 100 USDC    100000000000000000000
     Current LINK Price : $27.12
 
 
-    ------------------------------------------------------
+------------------------------------------------------
 
 NAV Issuance Issue :
 
@@ -249,7 +277,6 @@ NAV Issuance Issue :
   _to : 0x3793f758a36c04B51a520a59520e4d845f94F9F2
 
     
-----------------------------------------------------------
 ----------------------------------------------------------
 
 
@@ -288,6 +315,8 @@ NAV Issuance Issue :
   
 
 This point 6 and 7 will go into QTY parameter while creating the set. 
+
+
 
      
      */
